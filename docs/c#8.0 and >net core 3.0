@@ -1,6 +1,7 @@
 - No need to indent using statements. New syntax would be "using var reader = file.OpenText();"  
 - Switch expressions (not switch statements) with pattern matching  
 - async streams   
+https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8  
 
 - .net standard 2.1 introduced
 - new Ranges and Index syntax  
