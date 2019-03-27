@@ -1,0 +1,1 @@
+- No need to indent using statements. New syntax would be "using var reader = file.OpenText();"
