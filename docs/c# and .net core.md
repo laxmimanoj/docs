@@ -14,8 +14,18 @@ https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8
   ...  
 }  
   ref T cannot be actually created, but Span<T> uses special internal type in the runtime that’s treated as a just-in-time (JIT) intrinsic, with the JIT generating for it the equivalent of a ref T field. Types that contain such refs directly or indirectly are called ref-like types.So, indexing into a span doesn’t require computation to determine the beginning from a pointer and its starting offset, as the ref field itself already encapsulates both. 
-  
- 
+Span<T> instances can only live on the stack, not on the heap otherwise there is a chance of tearing (overwriting by multiple threads at same time. One more reason, is to limit the number of intrinsic pointers that can be created by span. Why? Coz intrinisic pointers are expensive and stack has implicit limit on the number of intrinsic pointers.   
+This means we can’t box spans. Also, it means we can’t have Span<T> fields in classes, or even in non-ref-like structs.  
+
+
+Memory<T> looks very much like an ArraySegment<T>:  
+public readonly struct Memory<T>  
+{  
+  private readonly object _object;  
+  private readonly int _index;  
+  private readonly int _length;  
+  ...  
+}  
   
 # .Net Core 
 ## 3.0
