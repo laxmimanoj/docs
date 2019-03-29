@@ -13,6 +13,8 @@ https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8
   private readonly int _length;  
   ...  
 }  
+  ref T cannot be actually created, but Span<T> uses special internal type in the runtime that’s treated as a just-in-time (JIT) intrinsic, with the JIT generating for it the equivalent of a ref T field. Types that contain such refs directly or indirectly are called ref-like types.So, indexing into a span doesn’t require computation to determine the beginning from a pointer and its starting offset, as the ref field itself already encapsulates both. 
+  
  
   
 # .Net Core 
