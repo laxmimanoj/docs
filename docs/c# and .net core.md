@@ -17,7 +17,7 @@ https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8
 Span<T> instances can only live on the stack, not on the heap otherwise there is a chance of tearing (overwriting by multiple threads at same time. One more reason, is to limit the number of intrinsic pointers that can be created by span. Why? Coz intrinisic pointers are expensive and stack has implicit limit on the number of intrinsic pointers.   
 This means we can’t box spans. Also, it means we can’t have Span<T> fields in classes, or even in non-ref-like structs.  
 
-
+Span<T> can’t be stored to the heap and thus can’t be persisted across asynchronous operations, what’s the answer? Memory<T>.  
 Memory<T> looks very much like an ArraySegment<T>:  
 public readonly struct Memory<T>  
 {  
@@ -26,7 +26,9 @@ public readonly struct Memory<T>
   private readonly int _length;  
   ...  
 }  
-  
+You can create a Memory<T> from an array and slice it just as you would a span, but it’s a (non-ref-like) struct and can live on the heap. Then, when you want to do synchronous processing, you can get a Span<T> from it. 
+For details, https://msdn.microsoft.com/en-us/magazine/mt814808.aspx 
+
 # .Net Core 
 ## 3.0
 - .net standard 2.1 introduced
