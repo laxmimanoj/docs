@@ -40,3 +40,4 @@ For details, https://msdn.microsoft.com/en-us/magazine/mt814808.aspx
   An app can be either using 'myconsole.exe' or 'dotnet myconsole.dll'  
 - fast in-box JSON Writer & JSON Document  
 - docker images will be published to Microsoft Container Registry (MCR) (mcr.microsoft.com)
+- default implementations are available for interfaces
