@@ -39,6 +39,8 @@ INSTRUCTION arguments
   ADD . $foo       # ADD . /bar  
   COPY \$foo /quux # COPY $foo /quux  
 
+#### .dockerignore file
+
 
 ### Commands  
 -- docker build . [build image]  
