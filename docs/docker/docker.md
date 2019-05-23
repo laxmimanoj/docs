@@ -10,9 +10,14 @@
 \# Comment  
 INSTRUCTION arguments
 
+#### parser directives
+- \# directive=value 
+- Once a comment, empty line or builder instruction has been processed, Docker no longer looks for parser directives. Therefore, all     parser directives must be at the very top of a Dockerfile.
+- Supported parser directives
+-- syntax
+-- escape
+
 ### Commands  
 -- docker build . [build image]  
 -- docker build -f /path/to/a/Dockerfile . [build from specific dockerfile]  
 -- docker build -t manoj/myapp:1.0.2 -t manoj/myapp:latest . [build with multiple tags]  
-
-
