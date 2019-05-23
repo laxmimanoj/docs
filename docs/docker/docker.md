@@ -16,13 +16,13 @@ INSTRUCTION arguments
 - Supported parser directives  
 -- syntax  
 -- escape  
-- syntax: 
--- only enabled if the BuildKit backend is used  
--- defines the location of the Dockerfile builder that is used for building the current Dockerfile    
--- official releases are available as stable and experimental  
--- example  
-\# syntax=docker.io/docker/dockerfile:1  
-\# syntax=docker/dockerfile:1.0.0-experimental  
+- syntax:   
+  -- only enabled if the BuildKit backend is used  
+  -- defines the location of the Dockerfile builder that is used for building the current Dockerfile    
+  -- official releases are available as stable and experimental  
+  -- example:    
+      \# syntax=docker.io/docker/dockerfile:1  
+      \# syntax=docker/dockerfile:1.0.0-experimental  
 
 ### Commands  
 -- docker build . [build image]  
