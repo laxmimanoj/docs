@@ -6,7 +6,9 @@
 - use '--cache-from' to load image cache from other registries
 - to use 'buildkit' backend to build images set an environment variable DOCKER_BUILDKIT=1 on the CLI before invoking docker build
 
-#### Format
+#### format
+\# Comment  
+INSTRUCTION arguments
 
 ### Commands  
 -- docker build . [build image]  
