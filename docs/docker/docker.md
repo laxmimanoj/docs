@@ -13,9 +13,16 @@ INSTRUCTION arguments
 #### parser directives
 - \# directive=value 
 - Once a comment, empty line or builder instruction has been processed, Docker no longer looks for parser directives. Therefore, all     parser directives must be at the very top of a Dockerfile.
-- Supported parser directives
--- syntax
--- escape
+- Supported parser directives  
+-- syntax  
+-- escape  
+- syntax: 
+-- only enabled if the BuildKit backend is used  
+-- defines the location of the Dockerfile builder that is used for building the current Dockerfile  
+-- official releases are available as stable and experimental
+-- example
+\# syntax=docker.io/docker/dockerfile:1
+\# syntax=docker/dockerfile:1.0.0-experimental
 
 ### Commands  
 -- docker build . [build image]  
