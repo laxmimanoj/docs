@@ -28,6 +28,18 @@ INSTRUCTION arguments
       Or  
     \# escape=\` (backtick)  useful for windows 
 
+#### environment variables
+- syntax 'ENV variable=value'  
+- usage '$variable_name or ${variable_name}'  
+- to escape variable conversion to its value, escaping (\\) can be used  
+- examples:   
+  FROM busybox  
+  ENV foo /bar  
+  WORKDIR ${foo}   # WORKDIR /bar  
+  ADD . $foo       # ADD . /bar  
+  COPY \$foo /quux # COPY $foo /quux  
+
+
 ### Commands  
 -- docker build . [build image]  
 -- docker build -f /path/to/a/Dockerfile . [build from specific dockerfile]  
