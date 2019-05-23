@@ -8,3 +8,4 @@ Commands:
 
 - build cache is only used from images that have a local parent chain or with images loaded with 'docker load'
 - use '--cache-from' to load image cache from other registries
+- to use 'buildkit' backend to build images set an environment variable DOCKER_BUILDKIT=1 on the CLI before invoking docker build
