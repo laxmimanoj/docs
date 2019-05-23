@@ -23,6 +23,10 @@ INSTRUCTION arguments
   -- example:    
       \# syntax=docker.io/docker/dockerfile:1  
       \# syntax=docker/dockerfile:1.0.0-experimental  
+ - escape:   
+    \# escape=\ (backslash) default
+      Or  
+    \# escape=\` (backtick)  useful for windows 
 
 ### Commands  
 -- docker build . [build image]  
