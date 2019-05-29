@@ -40,9 +40,9 @@ INSTRUCTION arguments
   COPY \\$foo /quux # COPY $foo /quux  
 
 #### .dockerignore file
-- .dockerignore, if exists should be at the root directory of the context  
-- it is new line separated
-- Examples:     
+- .dockerignore, if exist, should be at the root directory of the context  
+- it is new line separated  
+- Examples:  
   \# comment \#ignored  
   temp? \#exclude one-character extension of temp  
   \*/\*/temp* \#exclude two levels below the root  
