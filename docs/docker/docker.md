@@ -40,6 +40,27 @@ INSTRUCTION arguments
   COPY \\$foo /quux # COPY $foo /quux  
 
 #### .dockerignore file
+- .dockerignore, if exists should be at the roor directory of the context  
+- it is new line separated
+- Examples:     
+  \# comment \#ignored  
+  temp? \#exclude one-character extension of temp  
+  */*/temp* \#exclude two levels below the root  
+  temp? \#exclude one-character extension of temp like tempa and tempb  
+- ** that matches any number of directories (including zero)  
+- ! (exclamation mark) can be used to make exceptions to exclusions  
+-  the last line of the .dockerignore that matches a particular file determines whether it is included or excluded  
+   Example:    
+    *.md  
+    !README*.md  
+    README-secret.md  
+    
+    behaves differently than   
+    
+    *.md  
+    README-secret.md  
+    !README*.md  
+  - we can exclude Dockerfile and .dockerignore but they are still sent to daemon. But are not added to image as part of ADD or COPY instruction  
 
 
 ### Commands  
