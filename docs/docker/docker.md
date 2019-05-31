@@ -77,6 +77,7 @@ INSTRUCTION arguments
 ##### WORKDIR
 ##### ARG
 ##### ONBUILD
+##### STOPSIGNAL
 
 ### Commands  
 -- docker build . [build image]  
