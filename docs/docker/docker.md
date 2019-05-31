@@ -68,7 +68,7 @@ INSTRUCTION arguments
 ##### CMD
 ##### LABEL
 ##### EXPOSE
-
+##### ENV
 ### Commands  
 -- docker build . [build image]  
 -- docker build -f /path/to/a/Dockerfile . [build from specific dockerfile]  
