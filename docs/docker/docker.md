@@ -71,6 +71,7 @@ INSTRUCTION arguments
 ##### ENV
 ##### ADD
 ##### COPY
+##### ENTRYPOINT
 ### Commands  
 -- docker build . [build image]  
 -- docker build -f /path/to/a/Dockerfile . [build from specific dockerfile]  
