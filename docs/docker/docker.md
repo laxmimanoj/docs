@@ -62,6 +62,12 @@ INSTRUCTION arguments
     !README*.md  
   - we can exclude Dockerfile and .dockerignore but they are still sent to daemon. But are not added to image as part of ADD or COPY instruction  
 
+#### INSTRUCTIONS
+##### FROM
+##### RUN
+##### CMD
+##### LABEL
+##### EXPOSE
 
 ### Commands  
 -- docker build . [build image]  
