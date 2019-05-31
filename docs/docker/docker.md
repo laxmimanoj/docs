@@ -76,6 +76,7 @@ INSTRUCTION arguments
 ##### USER
 ##### WORKDIR
 ##### ARG
+##### ONBUILD
 
 ### Commands  
 -- docker build . [build image]  
