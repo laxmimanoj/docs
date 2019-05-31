@@ -72,8 +72,10 @@ INSTRUCTION arguments
 ##### ADD
 ##### COPY
 ##### ENTRYPOINT
-
-#### VOLUME
+##### VOLUME
+##### USER
+##### WORKDIR
+##### ARG
 
 ### Commands  
 -- docker build . [build image]  
