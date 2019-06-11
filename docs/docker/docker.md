@@ -84,3 +84,17 @@ INSTRUCTION arguments
 -- docker build . [build image]  
 -- docker build -f /path/to/a/Dockerfile . [build from specific dockerfile]  
 -- docker build -t manoj/myapp:1.0.2 -t manoj/myapp:latest . [build with multiple tags]  
+
+## Filter and Format
+The currently supported filters are:  
+
+- dangling (boolean - true or false)  
+  docker images --filter "dangling=true"  
+- label (label=<key> or label=<key>=<value>)  
+  docker images --filter "label=com.example.version=1.0"  
+- before (<image-name>[:<tag>], <image id> or <image@digest>) - filter images created before given id or references  
+  docker images --filter "before=image1"  
+- since (<image-name>[:<tag>], <image id> or <image@digest>) - filter images created since given id or references  
+  docker images --filter "since=image3"  
+- reference (pattern of an image reference) - filter images whose reference matches the specified pattern  
+  docker images --filter=reference='busy*:*libc'  
