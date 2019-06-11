@@ -98,3 +98,8 @@ The currently supported filters are:
   docker images --filter "since=image3"  
 - reference (pattern of an image reference) - filter images whose reference matches the specified pattern  
   docker images --filter=reference='busy*:*libc'  
+
+The formatting option (--format) will pretty print container output using a Go template.  
+docker images --format "{{.ID}}: {{.Repository}}"  
+docker images --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}"  
+Valid placeholders for the Go template are .ID, .Repository, .Tag, .Digest, .CreatedSince, .CreatedAt, .Size	  
